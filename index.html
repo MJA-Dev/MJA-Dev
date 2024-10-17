@@ -222,6 +222,9 @@
             const randomPosition = positions[Math.floor(Math.random() * positions.length)];
             phraseElement.classList.add(randomPosition);
 
+            // Cycle through phrases
+            index = (index + 1) % totalPhrases;
+
             // Animate fading in, showing fully, and fading out
             phraseElement.style.opacity = 1;
             setTimeout(() => {
