@@ -1,11 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Page</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+        }
+
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+        }
+
+        .header img {
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            margin-right: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .container {
+            display: flex;
+            height: calc(100vh - 80px); /* Adjusting for header height */
+        }
+
+        .left-image {
+            width: 20%;
+            background-image: url('your-image-url-here.jpg'); /* Replace with your actual image URL */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+            position: relative;
+        }
+
+        .phrases {
+            position: absolute;
+            animation: fade 50s infinite;
+            opacity: 0;
+        }
+
+        .right-avatar {
+            width: 20%;
+            background-color: #f4f4f4;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        @keyframes fade {
+            0%, 100% { opacity: 0; }
+            10%, 90% { opacity: 1; }
+        }
+    </style>
+</head>
 <body>
-  <script
-    type="module"
-    src="https://agent.d-id.com/v1/index.js"
-    data-name="did-agent"
-    data-mode="fabio"
-    data-client-key="YXV0aDB8NjcwZjIwM2VlNjM3M2IwNDQ2ODBjNTFlOnJhSVFIanBUVG82ZTJwek01RmgwYg=="
-    data-agent-id="agt_HtEfCl-u"
-    data-monitor="true">
-  </script>
+    <div class="header">
+        <img src="your-photo-url-here.jpg" alt="Your Photo"> <!-- Replace with your actual photo URL -->
+        <h1>Your Name - CIO</h1>
+    </div>
+
+    <div class="container">
+        <div class="left-image"></div>
+
+        <div class="content">
+            <div class="phrases" id="phrases"></div>
+        </div>
+
+        <div class="right-avatar">
+            <!-- D-ID Embedding -->
+            <script
+                type="module"
+                src="https://agent.d-id.com/v1/index.js"
+                data-name="did-agent"
+                data-mode="fabio"
+                data-client-key="YXV0aDB8NjcwZjIwM2VlNjM3M2IwNDQ2ODBjNTFlOnJhSVFIanBUVG82ZTJwek01RmgwYg=="
+                data-agent-id="agt_HtEfCl-u"
+                data-monitor="true">
+            </script>
+        </div>
+    </div>
+
+    <script>
+        const phrases = [
+            "Strategic Thinking", "Project Delivery", "Innovative Solutions", "Team Leadership", 
+            "Driving Innovation", "Transformative Initiatives", "Business Growth", "Customer-Centric", 
+            "Risk Management", "Collaborative Success", "Visionary Leadership", "Data-Driven Decisions", 
+            "Agile Project Management", "Technology Strategy", "Innovation at Scale", "Process Optimization",
+            "Digital Transformation", "Operational Excellence", "Stakeholder Engagement", "Change Leadership",
+            "Emerging Technologies", "IT Governance", "Sustainable Growth", "Cloud Strategy", 
+            "Security First", "Scalable Solutions", "Optimizing Performance", "Global Partnerships",
+            "Cross-Functional Leadership", "Talent Development", "Customer Insights", "Process Automation",
+            "Cultural Transformation", "Strategic Partnerships", "Future-Ready Technology", "Agile Leadership",
+            "Enterprise Architecture", "Continuous Improvement", "Cost Efficiency", "Cloud Migration",
+            "Disruptive Technologies", "Business Agility", "Technology Innovation", "Security Leadership",
+            "Client-Centric Approach", "Digital Innovation", "Maximizing ROI", "Operational Resilience",
+            "Data Analytics", "Enhancing User Experience", "Business Continuity", "IT Strategy and Execution"
+        ];
+
+        let index = 0;
+        const phraseElement = document.getElementById('phrases');
+
+        function changePhrase() {
+            phraseElement.textContent = phrases[index];
+            index = (index + 1) % phrases.length;
+        }
+
+        setInterval(changePhrase, 2000); // Change phrase every 2 seconds
+    </script>
 </body>
+</html>
