@@ -19,6 +19,7 @@
             text-align: left;
             display: flex;
             align-items: center;
+            height: 80px; /* Fixed height to prevent overlapping */
         }
 
         .header img {
@@ -35,7 +36,8 @@
 
         .container {
             display: flex;
-            height: calc(100vh - 120px); /* Adjusted to make room for footer */
+            flex-direction: row;
+            height: calc(100vh - 80px); /* Accounts for header height */
         }
 
         .left-image-container {
