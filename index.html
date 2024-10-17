@@ -35,7 +35,7 @@
 
         .container {
             display: flex;
-            height: calc(100vh - 80px); /* Adjusting for header height */
+            height: calc(100vh - 120px); /* Adjusted to make room for footer */
         }
 
         .left-image-container {
@@ -74,7 +74,7 @@
             text-align: center;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Aligns content to the top */
+            justify-content: flex-start;
             align-items: center;
             padding: 20px;
         }
@@ -83,6 +83,20 @@
             font-size: 16px;
             margin-bottom: 20px;
             color: #333;
+        }
+
+        /* Footer */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            color: #555;
+            background-color: #f9f9f9;
+            width: 100%;
         }
 
         /* Define 10 random positions for phrases */
@@ -127,6 +141,11 @@
                 data-monitor="true">
             </script>
         </div>
+    </div>
+
+    <!-- Footer Text -->
+    <div class="footer">
+        This AI is trained specifically on my work experience. Questions outside this scope may result in responses from general knowledge. This page is 90% AI-developed.
     </div>
 
     <script>
