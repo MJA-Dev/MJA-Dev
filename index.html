@@ -77,12 +77,28 @@
             justify-content: flex-start;
             align-items: center;
             padding: 20px;
+            position: relative;
         }
 
         .right-avatar p {
             font-size: 16px;
             margin-bottom: 20px;
             color: #333;
+            position: relative;
+        }
+
+        /* Add a down arrow below the instruction text */
+        .right-avatar p:after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            margin-left: -10px;
+            bottom: -25px;
+            width: 0; 
+            height: 0; 
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #333; /* Arrow color */
         }
 
         /* Footer */
@@ -97,6 +113,23 @@
             color: #555;
             background-color: #f9f9f9;
             width: 100%;
+        }
+
+        /* Hide the left image and content when screen width is too small */
+        @media (max-width: 768px) {
+            .left-image-container,
+            .content {
+                display: none;
+            }
+
+            .container {
+                justify-content: center;
+            }
+
+            .right-avatar {
+                width: 100%;
+                padding: 10px;
+            }
         }
 
         /* Define 10 random positions for phrases */
@@ -153,10 +186,10 @@
             "Strategic Thinking", "Project Delivery", "Innovative Solutions", "Team Leadership", 
             "Driving Innovation", "Transformative Initiatives", "Business Growth", "Customer-Centric", 
             "Risk Management", "Collaborative Success", "Visionary Leadership", "Data-Driven Decisions", 
-            "Artificial Intelligence", "Technology Strategy", "Innovation at Scale", "Process Optimization",
+            "Artificial Intelligence", "Technology Strategy", "Innovation at Scale", "Process Optimisation",
             "Digital Transformation", "Operational Excellence", "Stakeholder Engagement", "Change Leadership",
             "Emerging Technologies", "IT Governance", "Sustainable Growth", "Cloud Strategy", 
-            "Security First", "Scalable Solutions", "Optimizing Performance", "Broad industry exposure",
+            "Security First", "Scalable Solutions", "Optimising Performance", "Broad industry exposure",
             "Cross-Functional Leadership", "Talent Development", "Customer Insights", "Process Automation",
             "Blockchain", "Strategic Partnerships", "Future-Ready Technology", "Agile Leadership",
             "Enterprise Architecture", "Continuous Improvement", "Cost Efficiency", "Cloud Migration",
