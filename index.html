@@ -38,11 +38,17 @@
             height: calc(100vh - 80px); /* Adjusting for header height */
         }
 
-        .left-image {
+        .left-image-container {
             width: 500px;
-            background-image: url('WorkHistory.jpg'); 
-            background-size: cover;
-            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        .left-image-container img {
+            max-width: 100%;
+            height: auto;
         }
 
         .content {
@@ -85,7 +91,9 @@
     </div>
 
     <div class="container">
-        <div class="left-image"></div>
+        <div class="left-image-container">
+            <img src="WorkHistory.jpg" alt="Work History Image"> <!-- Replace with your actual image URL -->
+        </div>
 
         <div class="content">
             <div class="phrases" id="phrases"></div>
