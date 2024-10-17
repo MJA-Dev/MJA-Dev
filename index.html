@@ -47,8 +47,8 @@
             justify-content: center;
             align-items: top;
             background-color: #ffffff;
-            position: absolute; /* Set position to relative */
-            top: 150px; /* Move the container 175px from the top */
+            position: absolute;
+            top: 150px;
         }
 
         .left-image-container img {
@@ -70,7 +70,7 @@
         .phrases {
             position: absolute;
             opacity: 0;
-            transition: opacity 2s ease-in-out;
+            transition: opacity 1s ease-in-out;
         }
 
         .right-avatar {
@@ -222,14 +222,11 @@
             const randomPosition = positions[Math.floor(Math.random() * positions.length)];
             phraseElement.classList.add(randomPosition);
 
-            // Cycle through phrases
-            index = (index + 1) % totalPhrases;
-
             // Animate fading in, showing fully, and fading out
             phraseElement.style.opacity = 1;
             setTimeout(() => {
                 phraseElement.style.opacity = 0;
-            }, 3000); // After 3 seconds, start fading out
+            }, 2000); // After 2 seconds, start fading out
         }
 
         // Initial call and interval setup
